@@ -1,0 +1,19 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-3 mt-4">
+            <label for="input1">Box 1:</label>
+            <input type="number" id="input1" [(ngModel)]="input1Value" (ngModelChange)="updateValues()">
+        </div>
+        <div class="col-md-3 mt-4">
+            <label for="imput2">Box2</label>
+            <input type="number" id="input2" [(ngModel)]="input2Value" (ngModelChange)="updateValues()">
+            <span *ngIf="validationmessage" class="error">Incorrect Value</span>
+        </div>
+        <div class="button">
+            <button type="button" [disabled]="validationmessage" class="btn btn-success mt-4 btn-sm" (click)="createchart()">Create Chart</button>
+        </div>
+    </div>
+    <div class="card">
+        <p-chart type="pie" [data]="data" [options]="options"></p-chart>
+    </div>
+</div>
